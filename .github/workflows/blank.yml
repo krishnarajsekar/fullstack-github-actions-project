@@ -4,18 +4,22 @@ on:
   push:
     branches:
       - main
-      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Show Files
-        run: ls
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Print Message
-        run: echo "GitHub Actions Workflow Running Successfully"
+      - name: Build Application
+        run: npm run build
+
+      - name: Deploy Application
+        run: |
+          echo "Deploying application to server"
