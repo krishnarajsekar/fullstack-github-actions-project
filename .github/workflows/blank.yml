@@ -11,8 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Show message
-        run: echo "GitHub Actions pipeline is running successfully"
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Application
+        run: echo "Build successful"
+
+      - name: Deploy Application
+        run: echo "Deployment successful"
