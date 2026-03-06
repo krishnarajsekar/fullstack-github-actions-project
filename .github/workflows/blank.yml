@@ -11,19 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+      - name: Show Files
+        run: ls
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Application
-        run: echo "Build successful"
-
-      - name: Deploy Application
-        run: echo "Deployment successful"
+      - name: Print Message
+        run: echo "GitHub Actions Workflow Running Successfully"
